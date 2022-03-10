@@ -13,5 +13,10 @@ class ChuckService
     json = JSON.parse(resp.body, sybolize_names: false)
   end
 
+  def random_in_category(category)
+    resp = @conn.get("/jokes/random?category=#{category}")
+    json = JSON.parse(resp.body, sybolize_names: false)
+  end
+
 
 end
