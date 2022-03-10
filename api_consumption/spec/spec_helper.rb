@@ -1,6 +1,7 @@
 require 'rspec'
 require 'dotenv'
 require 'json'
+require 'faraday'
 
 Dotenv.load
 
