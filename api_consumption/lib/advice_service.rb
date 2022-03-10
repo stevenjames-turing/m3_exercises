@@ -13,4 +13,9 @@ class AdviceService
     json = JSON.parse(resp.body, symbolize_names: false)
   end
 
+  def search(query)
+    resp = @conn.get("/advice/search/#{query}")
+    json = JSON.parse(resp.body, symbolize_names: false)
+  end
+
 end
