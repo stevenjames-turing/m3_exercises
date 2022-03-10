@@ -23,4 +23,9 @@ class ChuckService
     json = JSON.parse(resp.body, sybolize_names: false)
   end
 
+  def search(query)
+    resp = @conn.get("/jokes/search?query=#{query}")
+    json = JSON.parse(resp.body, sybolize_names: false)
+  end
+
 end
