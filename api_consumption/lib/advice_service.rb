@@ -8,6 +8,9 @@ class AdviceService
      Faraday.new("https://api.adviceslip.com")
   end
 
-  
+  def random
+    resp = @conn.get("/advice")
+    json = JSON.parse(resp.body, symbolize_names: false)
+  end
 
 end
