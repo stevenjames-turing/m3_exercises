@@ -18,5 +18,9 @@ class ChuckService
     json = JSON.parse(resp.body, sybolize_names: false)
   end
 
+  def categories
+    resp = @conn.get("/jokes/categories")
+    json = JSON.parse(resp.body, sybolize_names: false)
+  end
 
 end
