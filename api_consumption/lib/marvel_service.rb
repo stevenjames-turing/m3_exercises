@@ -13,5 +13,12 @@ class MarvelService
     json = JSON.parse(resp.body, symbolize_names: false)
   end
 
+  def creators(creator)
+    if creator.keys == [:last_name]
+      resp = @conn.get("/v1/public/creators?lastName=#{creator[:last_name]}&ts=1&apikey=#{@public_key}&hash=#{@md5}")
+      json = JSON.parse(resp.body, symbolize_names: false)
+    end
+  end
+
 
 end
