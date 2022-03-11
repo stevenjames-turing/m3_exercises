@@ -10,6 +10,11 @@ class MusixMatchService
 
   def music_genres 
     resp = @conn.get("music.genres.get?apikey=#{@api_key}")
-    json = JSON.parse(resp.body, sybolize_names: false)
+    json = JSON.parse(resp.body, symbolize_names: false)
+  end
+
+  def tracks_from_artist(artist)
+    resp = @conn.get("track.search?apikey=#{@api_key}&q_artist=#{artist}")
+    json = JSON.parse(resp.body, symbolize_names: false)
   end
 end
