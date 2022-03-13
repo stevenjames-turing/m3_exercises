@@ -9,7 +9,7 @@ describe TacoService do
     expect(@t).to be_a(TacoService)
   end
 
-  it 'can create a taco with random ingredients' do
+  xit 'can create a taco with random ingredients' do
     r = @t.random_ingredients
 
     expect(r).to have_key("mixin")
@@ -19,7 +19,7 @@ describe TacoService do
     expect(r).to have_key("shell")
   end
 
-  it 'can find a random taco' do
+  xit 'can find a random taco' do
     r = @t.random_taco
 
     expect(r).to have_key("condiment_url")
@@ -34,7 +34,7 @@ describe TacoService do
     expect(r).to have_key("slug")
   end
 
-  it 'can find contributions for a specific user' do
+  xit 'can find contributions for a specific user' do
     c = @t.contributions("littlewhirl")
 
     expect(c).to have_key("full_name")
@@ -47,7 +47,7 @@ describe TacoService do
     expect(c).to have_key("seasonings")
   end
 
-  it 'can find ingredients of a specific type' do
+  xit 'can find ingredients of a specific type' do
     c = @t.ingredients_by_type("base_layers")
 
     expect(c).to be_a(Array)
@@ -55,7 +55,7 @@ describe TacoService do
     expect(c[0]).to have_key("slug")
   end
 
-  it 'can find contributors to a specific ingredient' do
+  xit 'can find contributors to a specific ingredient' do
     c = @t.contributors_by_ingredient("base_layers", "boiled_ground_beef")
 
     expect(c).to be_a(Array)
