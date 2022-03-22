@@ -1,7 +1,6 @@
 class MusixMatchService 
   def initialize
     @conn = connect
-    @api_key = "a57caa0e6b229a901ff32a3d652e0423"
   end
 
   def connect 
@@ -9,7 +8,7 @@ class MusixMatchService
   end
 
   def music_genres 
-    resp = @conn.get("music.genres.get?apikey=#{@api_key}")
+    resp = @conn.get("music.genres.get?apikey=#{ENV["musix_api_key"]}")
     json = JSON.parse(resp.body, symbolize_names: false)
   end
 
